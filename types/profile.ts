@@ -1,0 +1,27 @@
+export interface Profile {
+    name: string;
+    email: string;
+    blogUrl: string;
+    githubUrl: string;
+    profileImage: string;
+}
+
+export interface Education {
+    school: string;
+    degree: string;
+    major: string;
+    period: string;
+}
+
+export interface Certificate {
+    name: string;
+    issuer: string;
+    date: string;
+}
+
+export interface Career {
+    company: string;
+    role: string;
+    period: string;
+    description: string;
+}
