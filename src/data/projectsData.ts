@@ -74,7 +74,7 @@ export const projectsData: Project[] = [
         id: "homebridge-wallpad",
         title: "Homebridge 아파트 월패드 (RS485 패킷 분석)",
         category: "iot",
-        images: [""],
+        images: [ "https://youtube.com/shorts/aJQbNn2JQro?si=-L0OWDO-LNv_zbnL" ],
         description: [
             "EW11 시리얼-이더넷 컨버터를 이용해 아파트 월패드의 RS485 통신을 직접 분석하고, 공동현관문 및 세대 초인종을 HomeKit에 연동한 플러그인입니다.",
             "패킷 리버스 엔지니어링을 통해 공동현관문 제어, 세대 호출 알림 등의 명령 구조를 파악하고 Homebridge 액세서리로 구현했습니다."
@@ -113,7 +113,7 @@ export const projectsData: Project[] = [
         id: "homebridge-wol",
         title: "Homebridge IPTIME WOL + SSH (웹 크롤링 기반)",
         category: "iot",
-        images: [""],
+        images: [ "https://youtube.com/shorts/mtNtl7kwFng?si=glhY-86HpkjhL0t0" ],
         description: [
             "IPTIME 공유기의 웹 인터페이스를 직접 크롤링하여 WOL(Wake-on-Lan) 기능을 제어하고, SSH로 PC를 원격 종료하는 Homebridge 플러그인입니다.",
             "cheerio를 이용한 로그인, 세션ID 파싱, MAC 주소 조회, WOL 요청까지 전 과정을 자동화했습니다.",
