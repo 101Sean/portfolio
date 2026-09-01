@@ -1,12 +1,11 @@
 import { Project } from '../types/project';
 
 export const projectsData: Project[] = [
-    // ────────── Vue.js (기업용 대시보드) ──────────
     {
         id: "slim-system",
         title: "Slim System 대시보드 (기업용 R&D 소프트웨어 관리 플랫폼)",
         category: "vue",
-        images: ["/images/slim-1.png", "/images/slim-2.png"],
+        images: ["/images/slim.png", "/images/slim2.png"],
         description: [
             "다양한 기업을 위한 범용 R&D 소프트웨어 관리 대시보드입니다.",
             "Wijmo 라이브러리를 활용한 차트 및 그리드 기반의 실시간 사용량 모니터링, 소프트웨어 자산 관리, 어드민 계정 관리를 제공합니다.",
@@ -31,7 +30,7 @@ export const projectsData: Project[] = [
         id: "mobis-dashboard",
         title: "현대모비스 전용 대시보드 (부서별 특화 커스텀)",
         category: "vue",
-        images: ["/images/mobis-1.png", "/images/mobis-2.png"],
+        images: ["/images/mobis.png", "/images/mobis2.png"],
         description: [
             "Slim System을 현대모비스의 기업 요구사항에 맞게 특화 개발한 커스텀 버전입니다.",
             "기업 아이덴티티에 맞춘 UI/UX 전면 재구성, 부서별 맞춤 메뉴 구성 및 권한 체계를 도입했으며, 기존 범용 버전 대비 차별화된 디자인과 워크플로우를 제공합니다.",
@@ -50,7 +49,6 @@ export const projectsData: Project[] = [
         links: {}
     },
 
-    // ────────── IoT (Homebridge 플러그인 4개) ──────────
     {
         id: "homebridge-smartthings",
         title: "Homebridge SmartThings OAuth 연동 + IR 제어",
@@ -132,12 +130,11 @@ export const projectsData: Project[] = [
         links: { github: "https://github.com/101Sean/homebridge-wol-ssh" }
     },
 
-    // ────────── Spring Boot 풀스택 (QnA 웹사이트) ──────────
     {
         id: "devlog-qna",
         title: "DevLog QnA 웹사이트 (Spring Boot + WebSocket 채팅)",
         category: "backend",
-        images: [""],
+        images: ["/images/devqna.png", "/images/devqna2.png", "/images/devqna3.png"],
         description: [
             "기술 블로그를 위한 비가입 기반 Q&A 플랫폼입니다.",
             "익명 질문/댓글, 비밀 질문, 태그 기반 분류, 질문 상태 워크플로우, 좋아요, 어드민 답변 및 이메일 알림을 구현했습니다.",
@@ -152,7 +149,7 @@ export const projectsData: Project[] = [
         ],
         techDetails: [
             { name: "JWT 인증 (Access + Refresh Token)", description: "Spring Security 기반 JWT 인증 구현, Access/Refresh Token 방식으로 보안 강화", icon: "fas fa-key" },
-            { name: "Redis 캐싱 및 Rate Limiting", description: "Redis(Lettuce)를 활용한 데이터 캐싱 및 //API Rate Limiting 구현//", icon: "fas fa-database" },
+            { name: "Redis 캐싱 및 Rate Limiting", description: "Redis(Lettuce)를 활용한 데이터 캐싱 및 API Rate Limiting 구현", icon: "fas fa-database" },
             { name: "WebSocket STOMP 실시간 채팅", description: "WebSocket + STOMP 프로토콜로 실시간 1:1 채팅 상담 기능 구현 완료", icon: "fas fa-comments" },
             { name: "이메일 알림 발송", description: "JavaMailSender로 어드민 답변 시 Gmail SMTP 기반 이메일 알림 발송", icon: "fas fa-envelope" },
             { name: "JPA 엔티티 설계", description: "질문-댓글, 질문-태그(다대다), 질문 상태 워크플로우 연관관계 매핑", icon: "fas fa-table" },
