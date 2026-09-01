@@ -6,12 +6,14 @@ interface ImageCarouselProps {
 }
 
 // 유튜브 URL 패턴 확인
-const isYouTubeUrl = (url: string): boolean => {
+const isYouTubeUrl = (url?: string): boolean => {
+    if (!url) return false;
     return url.includes('youtube.com') || url.includes('youtu.be');
 };
 
 // 유튜브 URL에서 비디오 ID 추출
-const getYouTubeVideoId = (url: string): string | null => {
+const getYouTubeVideoId = (url?: string): string | null => {
+    if (!url) return null;
     const patterns = [
         /(?:https?:\/\/)?(?:www\.)?youtube\.com\/watch\?v=([a-zA-Z0-9_-]+)/,
         /(?:https?:\/\/)?(?:www\.)?youtube\.com\/embed\/([a-zA-Z0-9_-]+)/,
@@ -25,26 +27,30 @@ const getYouTubeVideoId = (url: string): string | null => {
     return null;
 };
 
-const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, interval = 4000 }) => {
+const ImageCarousel: React.FC<ImageCarouselProps> = ({ images = [], interval = 4000 }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [isVideo, setIsVideo] = useState(false);   // 현재 슬라이드가 영상이면 자동 슬라이드 일시 중지
+
+    // images 배열이 바뀌면 0으로 리셋
+    useEffect(() => {
+        setCurrentIndex(0);
+    }, [images]);
+
+    // 인덱스 계산
+    const safeIndex = currentIndex >= images.length ? 0 : currentIndex;
+    const currentSrc = images[safeIndex];
+    const isVideo = isYouTubeUrl(currentSrc);
 
     const nextSlide = useCallback(() => {
+        if (images.length <= 1) return;
         setCurrentIndex((prev) => (prev + 1) % images.length);
     }, [images.length]);
 
     // 자동 슬라이드
     useEffect(() => {
-        if (images.length <= 1) return;
-        if (isVideo) return;   // 영상이면 넘기지 않음
+        if (images.length <= 1 || isVideo) return; // 영상이거나 이미지 1개 이하면 중지
         const timer = setInterval(nextSlide, interval);
         return () => clearInterval(timer);
     }, [nextSlide, interval, images.length, isVideo]);
-
-    // 현재 슬라이드가 바뀔 때 영상 여부 확인
-    useEffect(() => {
-        setIsVideo(isYouTubeUrl(images[currentIndex]));
-    }, [currentIndex, images]);
 
     if (!images || images.length === 0) {
         return <div className="carousel-empty">이미지 없음</div>;
@@ -52,22 +58,28 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, interval = 4000 }
 
     return (
         <div className="carousel-container">
-            <div className="carousel-track" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-                {images.map((src, index) => (
-                    <div className="carousel-slide" key={index}>
-                        {isYouTubeUrl(src) ? (
-                            <iframe
-                                src={`https://www.youtube.com/embed/${getYouTubeVideoId(src)}?autoplay=1&mute=1&controls=1&loop=1&playlist=${getYouTubeVideoId(src)}`}
-                                title={`YouTube video ${index + 1}`}
-                                allow="autoplay; encrypted-media"
-                                allowFullScreen
-                                className="carousel-video"
-                            />
-                        ) : (
-                            <img src={src} alt={`slide ${index + 1}`} />
-                        )}
-                    </div>
-                ))}
+            <div className="carousel-track" style={{ transform: `translateX(-${safeIndex * 100}%)` }}>
+                {images.map((src, index) => {
+                    const videoId = getYouTubeVideoId(src);
+                    const isMediaVideo = isYouTubeUrl(src);
+
+                    return (
+                        <div className="carousel-slide" key={`${src}-${index}`}>
+                            {isMediaVideo && videoId ? (
+                                <iframe
+                                    key={`iframe-${videoId}-${index}`}
+                                    src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=1&loop=1&playlist=${videoId}`}
+                                    title={`YouTube video ${index + 1}`}
+                                    allow="autoplay; encrypted-media"
+                                    allowFullScreen
+                                    className="carousel-video"
+                                />
+                            ) : (
+                                <img src={src} alt={`slide ${index + 1}`} />
+                            )}
+                        </div>
+                    );
+                })}
             </div>
 
             {/* 점(dot) 인디케이터 */}
@@ -76,7 +88,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, interval = 4000 }
                     {images.map((_, index) => (
                         <button
                             key={index}
-                            className={`carousel-dot ${index === currentIndex ? 'active' : ''}`}
+                            className={`carousel-dot ${index === safeIndex ? 'active' : ''}`}
                             onClick={() => setCurrentIndex(index)}
                         />
                     ))}

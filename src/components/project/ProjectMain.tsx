@@ -10,7 +10,7 @@ interface ProjectMainProps {
 const ProjectMain: React.FC<ProjectMainProps> = ({ project, isActive }) => {
     return (
         <div className={`project-main ${isActive ? 'active' : ''}`}>
-            {/* ✅ 이미지 캐러셀 영역 */}
+            {/* 이미지 캐러셀 영역 */}
             <div className="project-image-area">
                 <ImageCarousel images={project.images} interval={4000} />
             </div>

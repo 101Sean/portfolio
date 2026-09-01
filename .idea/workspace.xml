@@ -4,18 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75c728e8-84f1-43d6-b4a4-a90321735692" name="Changes" comment="readme 수정">
-      <change afterPath="$PROJECT_DIR$/public/images/devqna.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/devqna2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/devqna3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/mobis.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/mobis2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/slim.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/slim2.png" afterDir="false" />
+    <list default="true" id="75c728e8-84f1-43d6-b4a4-a90321735692" name="Changes" comment="사진 추가">
       <change afterPath="$PROJECT_DIR$/src/data/profileData.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/project/ImageCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/project/ImageCarousel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/project/ProjectMain.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/project/ProjectMain.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/project/TechDetailCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/project/TechDetailCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/projectsData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/projectsData.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Projects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Projects.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +147,7 @@
       <updated>1776933894987</updated>
       <workItem from="1776933896043" duration="104208000" />
       <workItem from="1785174409374" duration="31731000" />
-      <workItem from="1788256193904" duration="4289000" />
+      <workItem from="1788256193904" duration="6372000" />
     </task>
     <task id="LOCAL-00001" summary="readme 수정">
       <option name="closed" value="true" />
@@ -160,7 +157,15 @@
       <option name="project" value="LOCAL" />
       <updated>1788258818351</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="사진 추가">
+      <option name="closed" value="true" />
+      <created>1788262410051</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1788262410051</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,6 +173,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="readme 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="readme 수정" />
+    <MESSAGE value="사진 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="사진 추가" />
   </component>
 </project>

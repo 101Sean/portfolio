@@ -68,7 +68,7 @@ export const projectsData: Project[] = [
             { name: "IR 컨트롤러 확장", description: "Galaxy Home Mini의 IR 신호 분석 및 TV/셋톱박스 제어 기능 추가", icon: "fas fa-broadcast-tower" },
             { name: "안정성 개선", description: "하위 브릿지 자동 재시작 기능 구현, BaseAccessory 추상화로 코드 중복 제거", icon: "fas fa-sync-alt" }
         ],
-        links: { github: "https://github.com/101Sean/homebridge-smartthings-device" }
+        links: { github: "https://github.com/101Sean/homebridge-smartthings-device", blog: "https://kingsean.tistory.com/27" }
     },
     {
         id: "homebridge-wallpad",
@@ -87,7 +87,7 @@ export const projectsData: Project[] = [
             { name: "Lock Mechanism 액세서리", description: "Homebridge 락 서비스로 공동현관문 제어", icon: "fas fa-door-open" },
             { name: "세대 호출 연동", description: "특정 패킷 감지로 세대 호출시 알림 기능 구현", icon: "fas fa-phone-alt" }
         ],
-        links: { github: "https://github.com/101Sean/homebridge-wallpad" }
+        links: { github: "https://github.com/101Sean/homebridge-wallpad", blog: "https://kingsean.tistory.com/43" }
     },
     {
         id: "homebridge-heatingmat",
@@ -99,7 +99,7 @@ export const projectsData: Project[] = [
             "온도 제어를 Thermostat 서비스에, 시간 예약 기능(HomeKit 미지원)을 Lightbulb 서비스에 매핑하는 창의적인 방식으로 구현했습니다.",
             "연결 유지 패킷과 Notification 패킷까지 분석하여 안정적인 양방향 통신을 보장합니다."
         ],
-        role: "개인 프로젝트 (Node.js + BLE + HomeKit)",
+        role: "개인 프로젝트 (Node.js + BLE + 패킷 분석)",
         period: "2025.10 - 2026.01",
         techStack: ["Node.js", "JavaScript", "Homebridge API", "BLE", "noble"],
         techDetails: [
@@ -107,7 +107,7 @@ export const projectsData: Project[] = [
             { name: "비표준 기능 매핑", description: "HomeKit 미지원 기능(시간 예약)을 Lightbulb 서비스에 매핑하는 독창적 해결", icon: "fas fa-lightbulb" },
             { name: "양방향 상태 동기화", description: "수동 조작 시 실시간 상태 수신하여 HomeKit UI에 즉시 반영", icon: "fas fa-sync-alt" }
         ],
-        links: { github: "https://github.com/101Sean/homebridge-heatingmat" }
+        links: { github: "https://github.com/101Sean/homebridge-heatingmat", blog: "https://kingsean.tistory.com/19" }
     },
     {
         id: "homebridge-wol",
@@ -127,7 +127,7 @@ export const projectsData: Project[] = [
             { name: "SSH 원격 종료", description: "ssh2 라이브러리로 PC에 안전하게 접속하여 shutdown 명령 실행", icon: "fas fa-terminal" },
             { name: "전원 상태 감시", description: "SSH 포트 체크 방식으로 PC의 on/off 상태를 정확히 감지하여 HomeKit에 전달", icon: "fas fa-heartbeat" }
         ],
-        links: { github: "https://github.com/101Sean/homebridge-wol-ssh" }
+        links: { github: "https://github.com/101Sean/homebridge-wol-ssh", blog: "https://kingsean.tistory.com/18" }
     },
 
     {
@@ -138,7 +138,7 @@ export const projectsData: Project[] = [
         description: [
             "기술 블로그를 위한 비가입 기반 Q&A 플랫폼입니다.",
             "익명 질문/댓글, 비밀 질문, 태그 기반 분류, 질문 상태 워크플로우, 좋아요, 어드민 답변 및 이메일 알림을 구현했습니다.",
-            "Redis 기반 캐싱 및 Rate Limiting, Spring Security + JWT 인증, WebSocket STOMP 실시간 1:1 채팅 상담 기능을 완료했습니다."
+            "Redis 기반 캐싱 및 Rate Limiting, Spring Security + JWT 인증, WebSocket STOMP 실시간 1:1 채팅 상담 기능을 구현했습니다."
         ],
         role: "풀스택 개인 프로젝트",
         period: "2026.03 - 2026.07",
@@ -155,6 +155,6 @@ export const projectsData: Project[] = [
             { name: "JPA 엔티티 설계", description: "질문-댓글, 질문-태그(다대다), 질문 상태 워크플로우 연관관계 매핑", icon: "fas fa-table" },
             { name: "Docker Compose 환경", description: "MySQL + Redis 컨테이너로 개발/배포 환경 구성", icon: "fas fa-docker" }
         ],
-        links: { github: "https://github.com/101Sean/devlog-qna" }
+        links: { github: "https://github.com/101Sean/devlog-qna", blog: "https://kingsean.tistory.com/48" }
     }
 ];

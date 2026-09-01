@@ -362,6 +362,10 @@
     text-decoration: none;
 }
 
+.projects-right {
+    overflow-x: hidden;
+}
+
 /* 기술 상세 카드 */
 .tech-detail-heading {
     font-size: 0.95rem;

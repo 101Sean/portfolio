@@ -7,8 +7,8 @@ import { useNavigate } from 'react-router-dom';
 
 const categories: { key: ProjectCategory; label: string; icon: string }[] = [
     { key: 'vue', label: 'Vue.js', icon: 'fab fa-vuejs' },
-    { key: 'iot', label: 'IoT', icon: 'fas fa-microchip' },
-    { key: 'backend', label: 'Backend', icon: 'fas fa-server' }
+    { key: 'backend', label: 'Backend', icon: 'fas fa-server' },
+    { key: 'iot', label: 'IoT', icon: 'fas fa-microchip' }
 ];
 
 const Projects: React.FC = () => {
@@ -17,14 +17,14 @@ const Projects: React.FC = () => {
     const [showDetails, setShowDetails] = useState(false);
 
     const filteredProjects = projectsData.filter(p => p.category === selectedCategory);
-    const selectedProject: Project | undefined = filteredProjects[currentIndex];
 
-    // 카테고리 변경 시 인덱스 0으로 리셋
-    useEffect(() => {
+    const safeIndex = currentIndex >= filteredProjects.length ? 0 : currentIndex;
+    const selectedProject: Project | undefined = filteredProjects[safeIndex];
+
+    const handleCategoryChange = (key: ProjectCategory) => {
+        setSelectedCategory(key);
         setCurrentIndex(0);
-        setShowDetails(false);
-        setTimeout(() => setShowDetails(true), 200);
-    }, [selectedCategory]);
+    };
 
     // 프로젝트 변경 시 애니메이션 리셋
     useEffect(() => {
@@ -55,7 +55,7 @@ const Projects: React.FC = () => {
                     <button
                         key={cat.key}
                         className={`category-tab ${selectedCategory === cat.key ? 'active' : ''}`}
-                        onClick={() => setSelectedCategory(cat.key)}
+                        onClick={() => handleCategoryChange(cat.key)}
                     >
                         <i className={cat.icon}></i>
                         <span>{cat.label}</span>
@@ -78,14 +78,18 @@ const Projects: React.FC = () => {
                         <i className="fas fa-microchip"></i> 기술 상세
                     </h3>
                     <div className="tech-detail-list">
-                        {selectedProject?.techDetails.map((detail, index) => (
-                            <TechDetailCard
-                                key={`${selectedProject.id}-${index}`}
-                                detail={detail}
-                                index={index}
-                                isVisible={showDetails}
-                            />
-                        ))}
+                        {selectedProject && Array.isArray(selectedProject.techDetails) && selectedProject.techDetails.length > 0 ? (
+                            selectedProject.techDetails.map((detail, index) => (
+                                <TechDetailCard
+                                    key={`${selectedProject.id || safeIndex}-${index}`}
+                                    detail={detail}
+                                    index={index}
+                                    isVisible={showDetails}
+                                />
+                            ))
+                        ) : (
+                            <p className="no-detail">기술 상세 정보가 없습니다.</p>
+                        )}
                     </div>
                 </div>
             </div>
