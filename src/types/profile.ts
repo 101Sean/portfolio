@@ -1,5 +1,6 @@
 export interface Profile {
     name: string;
+    title: string;              // "Backend Developer (Former Frontend)"
     email: string;
     blogUrl: string;
     githubUrl: string;
@@ -23,5 +24,4 @@ export interface Career {
     company: string;
     role: string;
     period: string;
-    description: string;
 }
