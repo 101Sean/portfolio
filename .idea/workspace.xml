@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75c728e8-84f1-43d6-b4a4-a90321735692" name="Changes" comment="세부수정 완료">
-      <change afterPath="$PROJECT_DIR$/vercel.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    <list default="true" id="75c728e8-84f1-43d6-b4a4-a90321735692" name="Changes" comment="시연 영상 링크 추가">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +141,7 @@
       <updated>1776933894987</updated>
       <workItem from="1776933896043" duration="104208000" />
       <workItem from="1785174409374" duration="31731000" />
-      <workItem from="1788256193904" duration="6421000" />
+      <workItem from="1788256193904" duration="7502000" />
     </task>
     <task id="LOCAL-00001" summary="readme 수정">
       <option name="closed" value="true" />
@@ -168,7 +167,23 @@
       <option name="project" value="LOCAL" />
       <updated>1788264531178</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="vercel 설정 추가">
+      <option name="closed" value="true" />
+      <created>1788264586219</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1788264586219</updated>
+    </task>
+    <task id="LOCAL-00005" summary="시연 영상 링크 추가">
+      <option name="closed" value="true" />
+      <created>1788266579710</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1788266579710</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,6 +193,8 @@
     <MESSAGE value="readme 수정" />
     <MESSAGE value="사진 추가" />
     <MESSAGE value="세부수정 완료" />
-    <option name="LAST_COMMIT_MESSAGE" value="세부수정 완료" />
+    <MESSAGE value="vercel 설정 추가" />
+    <MESSAGE value="시연 영상 링크 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="시연 영상 링크 추가" />
   </component>
 </project>
